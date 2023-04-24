@@ -127,7 +127,24 @@ private double Weight;
    
    public double calcFee()
    {
-   return (calcBmi() - 35)*20;
+   double Fee = 600;
+   
+   if (Age > 50)
+   {
+   Fee += 75;
+   }
+   
+   if (Smoker.equals("smoker"))
+   {
+   Fee += 100;
+   }
+   
+   if (calcBmi() > 35)
+   {
+   Fee += 20*(calcBmi() - 35);
+   }
+   
+   return Fee;
    }
 
 }
